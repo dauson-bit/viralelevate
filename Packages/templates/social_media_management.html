@@ -1,0 +1,748 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Social Media Management{% endblock %}
+
+{% block content %}
+<!-- Hero Section with animated background and bounce effect on buttons -->
+<section class="hero-section py-5 bg-gradient">
+  <div class="container">
+    <div class="card border-0 shadow-lg overflow-hidden">
+      <div class="card-body p-md-5 p-4 bg-primary text-white position-relative">
+        <div class="position-absolute top-0 end-0 d-none d-lg-block">
+          <img src="{% static 'images/social-icons.svg' %}" alt="Social Media Icons" width="200" class="opacity-25">
+        </div>
+        <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeIn">Grow Your Social Media Presence</h1>
+        <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">Let us manage, boost, and elevate your online presence. Whether you need full management or just more followers, we've got a solution for you.</p>
+        <div class="d-flex flex-column flex-md-row gap-3 animate__animated animate__fadeIn animate__delay-2s">
+          <a href="#full-packages" class="btn btn-warning btn-lg rounded-pill shadow fw-bold px-4 py-3 animate__animated animate__pulse animate__infinite animate__slower">
+            <i class="bi bi-stars me-2"></i>Explore Full Packages
+          </a>
+          <a href="#boost-services" class="btn btn-light btn-lg rounded-pill text-primary fw-bold px-4 py-3">
+            <i class="bi bi-rocket-takeoff me-2"></i>Get Instant Boosts
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Payment Support Section with tooltip -->
+<section class="py-4 bg-gradient-dark">
+  <div class="container">
+    <div class="card border-0 shadow-lg">
+      <div class="card-body p-4 text-center">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4 class="mb-2"><i class="bi bi-credit-card me-2"></i>Need help with payments?</h4>
+            <p class="mb-md-0">Whenever you face a problem making payments, our support team is here to help.</p>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-success btn-lg rounded-pill shadow w-100" data-bs-toggle="modal" data-bs-target="#paymentSupportModal">
+              <i class="bi bi-headset me-2"></i>Payment Support
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Support Modal -->
+<!-- Payment Support Modal -->
+<div class="modal fade" id="paymentSupportModal" tabindex="-1" aria-labelledby="paymentSupportModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="paymentSupportModalLabel">
+          <i class="bi bi-headset me-2"></i>Payment Support
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Form Begins -->
+      <form id="paymentSupportForm" method="POST">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="supportName" class="form-label">Your Name</label>
+            <input type="text" name="name" class="form-control" id="supportName" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="supportEmail" class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-control" id="supportEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="supportIssue" class="form-label">Payment Issue</label>
+            <select name="issue" class="form-select" id="supportIssue" required>
+              <option value="" disabled selected>Choose your issue</option>
+              <option value="Payment not going through">Payment not going through</option>
+              <option value="Double charged">Double charged</option>
+              <option value="Need to change payment method">Need to change payment method</option>
+              <option value="Other issue">Other issue</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="supportMessage" class="form-label">Message</label>
+            <textarea name="message" class="form-control" id="supportMessage" rows="3" placeholder="Please describe your issue" required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success" id="submitSupportBtn">Submit Request</button>
+        </div>
+      </form>
+      <!-- Form Ends -->
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Services Section with interactive cards -->
+<section class="py-5 bg-light" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-2">OUR SERVICES</span>
+      <h2 class="display-5 fw-bold">Choose Your Growth Strategy</h2>
+      <p class="lead text-muted">Tailored solutions to match your social media goals</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Full Account Management Card -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-0 shadow-lg hover-card service-card" id="full-packages">
+          <div class="ribbon ribbon-top-right"><span>POPULAR</span></div>
+          <div class="card-header bg-info text-white text-center py-4">
+            <h3 class="mb-0">
+              <i class="bi bi-calendar-check me-2"></i>
+              Full Account Management
+            </h3>
+          </div>
+          <div class="card-body p-4">
+            <div class="features mb-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-info text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Custom content creation & scheduling</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-info text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Community engagement & growth strategy</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-info text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Monthly analytics & strategy calls</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="feature-icon bg-info text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Perfect for businesses & influencers</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="btn btn-lg btn-info text-white rounded-pill px-4 py-3 fw-bold">
+                <i class="bi bi-arrow-right-circle me-2"></i>See Management Plans
+              </a>
+            </div>
+          </div>
+          <div class="card-footer bg-white border-0 text-center p-4">
+            <span class="text-muted">Starting at</span>
+            <h4 class="fw-bold text-info">$499<small class="text-muted fw-normal">/month</small></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- One-Time Growth Card -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-0 shadow-lg hover-card service-card" id="boost-services">
+          <div class="card-header bg-success text-white text-center py-4">
+            <h3 class="mb-0">
+              <i class="bi bi-rocket me-2"></i>
+              One-Time Growth Services
+            </h3>
+          </div>
+          <div class="card-body p-4">
+            <div class="features mb-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-success text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Instant delivery: Followers, Likes, Views</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-success text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Quick social proof boost for posts & profiles</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon bg-success text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">No long-term commitment needed</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="feature-icon bg-success text-white me-3">
+                  <i class="bi bi-check2-circle"></i>
+                </div>
+                <p class="mb-0">Perfect for campaigns, events, or brand pushes</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a href="{% url 'one_time_growth' %}" class="btn btn-lg btn-success rounded-pill px-4 py-3 fw-bold">
+                <i class="bi bi-arrow-right-circle me-2"></i>See Boost Services
+              </a>
+            </div>
+          </div>
+          <div class="card-footer bg-white border-0 text-center p-4">
+            <span class="text-muted">Starting at</span>
+            <h4 class="fw-bold text-success">$49<small class="text-muted fw-normal">/package</small></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Platforms -->
+    <div class="row mt-5 justify-content-center text-center platform-icons">
+      <div class="col-12">
+        <h4 class="mb-4">Platforms We Support</h4>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-instagram"></i>
+          <p>Instagram</p>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-facebook"></i>
+          <p>Facebook</p>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-tiktok"></i>
+          <p>TikTok</p>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-twitter-x"></i>
+          <p>Twitter/X</p>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-linkedin"></i>
+          <p>LinkedIn</p>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="platform-icon mb-3">
+          <i class="bi bi-youtube"></i>
+          <p>YouTube</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials section with carousel -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-2">TESTIMONIALS</span>
+      <h2 class="display-5 fw-bold">What Our Clients Are Saying</h2>
+      <p class="lead text-muted">Real results. Real people. Discover how we transformed their social media presence.</p>
+    </div>
+
+    <!-- Testimonials Carousel -->
+    <div id="testimonialCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row g-4 justify-content-center">
+            <!-- Testimonial Card 1 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 h-100 testimonial-card">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div class="testimonial-rating text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <i class="bi bi-quote text-primary opacity-25 display-3"></i>
+                  </div>
+                  <p class="card-text mb-4">"I went from 1,200 to 6,800 followers in just one month. My content finally reaches the right audience. The engagement is real, and my sales have doubled!"</p>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex align-items-center p-4">
+                  <img src="{% static 'images/client1.jpg' %}" alt="Client 1" class="rounded-circle me-3" width="60" height="60">
+                  <div>
+                    <h6 class="mb-0 fw-bold">iman </h6>
+                    <small class="text-muted">@imancharlie</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 h-100 testimonial-card">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div class="testimonial-rating text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <i class="bi bi-quote text-primary opacity-25 display-3"></i>
+                  </div>
+                  <p class="card-text mb-4">"Their posting strategy boosted my engagement by 200%. I finally feel seen as a brand. Worth every penny and more - my ROI has been incredible."</p>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex align-items-center p-4">
+                  <img src="{% static 'images/client2.jpg' %}" alt="Client 2" class="rounded-circle me-3" width="60" height="60">
+                  <div>
+                    <h6 class="mb-0 fw-bold">mosses mgema</h6>
+                    <small class="text-muted">@moriana plumbings services</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center">
+            <!-- Testimonial Card 3 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 h-100 testimonial-card">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div class="testimonial-rating text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <i class="bi bi-quote text-primary opacity-25 display-3"></i>
+                  </div>
+                  <p class="card-text mb-4">"The growth reports and strategy calls keep me on track. It's like having a full marketing team! I've secured three brand deals since starting with them."</p>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex align-items-center p-4">
+                  <img src="{% static 'images/client3.jpg' %}" alt="Client 3" class="rounded-circle me-3" width="60" height="60">
+                  <div>
+                    <h6 class="mb-0 fw-bold">vanessa.</h6>
+                    <small class="text-muted">@essence with vanessa</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 4 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 h-100 testimonial-card">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div class="testimonial-rating text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <i class="bi bi-quote text-primary opacity-25 display-3"></i>
+                  </div>
+                  <p class="card-text mb-4">"My local cafe was struggling until I found this service. Our foot traffic is up 35% and online orders have tripled. Best business decision I've made!"</p>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex align-items-center p-4">
+                  <img src="{% static 'images/client4.jpg' %}" alt="Client 4" class="rounded-circle me-3" width="60" height="60">
+                  <div>
+                    <h6 class="mb-0 fw-bold">amosi k.</h6>
+                    <small class="text-muted">@cera restaurant</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+      <a href="{% url 'one_time_growth' %}" class="btn btn-primary btn-lg rounded-pill shadow px-5 py-3 fw-bold">
+        <i class="bi bi-trophy me-2"></i>Be Our Next Success Story
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process section with timeline -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-2">HOW IT WORKS</span>
+      <h2 class="display-5 fw-bold">Our Simple Process</h2>
+      <p class="lead text-muted">From onboarding to growth, we make it easy</p>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="timeline-icon bg-primary text-white">
+                    <i class="bi bi-chat-dots"></i>
+                  </div>
+                  <h4 class="mb-3">1. Free Consultation</h4>
+                  <p class="mb-0">We'll understand your goals, audience, and needs in a 30-minute strategy session.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="timeline-icon bg-primary text-white">
+                    <i class="bi bi-clipboard-data"></i>
+                  </div>
+                  <h4 class="mb-3">2. Custom Strategy</h4>
+                  <p class="mb-0">We'll develop a tailored plan based on your specific business needs and objectives.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content left">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="timeline-icon bg-primary text-white">
+                    <i class="bi bi-rocket-takeoff"></i>
+                  </div>
+                  <h4 class="mb-3">3. Implementation</h4>
+                  <p class="mb-0">Our team takes over and begins executing your custom growth strategy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content right">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="timeline-icon bg-primary text-white">
+                    <i class="bi bi-graph-up-arrow"></i>
+                  </div>
+                  <h4 class="mb-3">4. Monitoring & Growth</h4>
+                  <p class="mb-0">Regular reports and strategy calls to track progress and optimize for better results.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs section with improved accordion -->
+<section class="py-5 bg-white" id="faq">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-2">FAQ</span>
+      <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+      <p class="lead text-muted">Here are answers to some common questions about our Social Media Management services.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion accordion-flush" id="faqAccordion">
+          <!-- FAQ 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                What platforms do you manage?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>We manage all major social media platforms including:</p>
+                <div class="row text-center">
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-instagram text-primary"></i>
+                      <p>Instagram</p>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-facebook text-primary"></i>
+                      <p>Facebook</p>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-tiktok text-primary"></i>
+                      <p>TikTok</p>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-twitter-x text-primary"></i>
+                      <p>Twitter/X</p>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-linkedin text-primary"></i>
+                      <p>LinkedIn</p>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-2">
+                    <div class="platform-icon-sm">
+                      <i class="bi bi-youtube text-primary"></i>
+                      <p>YouTube</p>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-3 mb-0">You can choose individual platforms or a package based on your needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                Will you create the content for my posts?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p class="mb-0">Yes! Our team creates engaging visuals and copy for your posts, reels, and stories – all aligned with your brand voice. We handle everything from photography direction and graphic design to caption writing and hashtag research.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                How do I track progress?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>You'll receive comprehensive growth tracking through:</p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-graph-up text-success me-3"></i>
+                    Monthly detailed insight reports
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-calendar-check text-success me-3"></i>
+                    Weekly performance calls with your dedicated manager
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-shield-check text-success me-3"></i>
+                    Real-time dashboard access
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-people text-success me-3"></i>
+                    Detailed audience growth and engagement metrics
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                Do I need to share my passwords?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p class="mb-0">No passwords are required! We use secure access methods including:</p>
+                <div class="row mt-3">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-shield-lock text-primary me-2"></i>
+                      <span>Meta Business Suite</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-shield-lock text-primary me-2"></i>
+                      <span>Facebook Page roles</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-shield-lock text-primary me-2"></i>
+                      <span>Instagram collaboration</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-shield-lock text-primary me-2"></i>
+                      <span>Professional scheduling tools</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                Can I upgrade or cancel my package anytime?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Yes, you have complete flexibility with your package:</p>
+                <div class="alert alert-info">
+                  <div class="d-flex">
+                    <div class="me-3">
+                      <i class="bi bi-info-circle-fill text-info fs-4"></i>
+                    </div>
+                    <div>
+                      You can upgrade, downgrade, or cancel your package with a 7-day notice before the next billing cycle. No long-term contracts required!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                How quickly will I see results?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Results timeline varies based on your current account status and goals:</p>
+                <div class="progress-timeline mt-3">
+                  <div class="progress-item">
+                    <div class="timeline-point bg-warning">
+                      <span>1</span>
+                    </div>
+                    <div class="timeline-content">
+                      <h6 class="mb-1">First Week</h6>
+                      <p class="small text-muted">Initial setup, strategy development, and first content pieces</p>
+                    </div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="timeline-point bg-info">
+                      <span>2</span>
+                    </div>
+                    <div class="timeline-content">
+                      <h6 class="mb-1">2-4 Weeks</h6>
+                      <p class="small text-muted">Noticeable engagement improvements and initial follower growth</p>
+                    </div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="timeline-point bg-success">
+                      <span>3</span>
+                    </div>
+                    <div class="timeline-content">
+                      <h6 class="mb-1">1-3 Months</h6>
+                      <p class="small text-muted">Significant growth trends, account optimization complete</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- More Questions -->
+        <div class="text-center mt-4">
+          <p>Have more questions? We're here to help!</p>
+          <button class="btn btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <i class="bi bi-chat-dots me-2"></i>Ask a Question
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="contactModalLabel"><i class="bi bi-chat-dots me-2"></i>Have a Question?</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="contactName" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="contactQuestion" class="form-label">Your Question</label>
+            <textarea class="form-control" id="contactQuestion" rows="3" placeholder="What would you like to know?"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send Question</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap JS and Custom JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+{% endblock%}

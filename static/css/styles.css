@@ -1,0 +1,57 @@
+/* Base Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+  padding-top: 76px; /* Height of navbar */
+}
+
+footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 1rem 0;
+}
+
+/* Navbar */
+.navbar {
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+/* Footer Links */
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff !important;
+}
+
+/* Social Icons */
+footer .bi {
+  transition: transform 0.3s ease;
+}
+
+footer .bi:hover {
+  transform: translateY(-3px);
+}

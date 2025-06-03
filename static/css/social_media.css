@@ -1,0 +1,264 @@
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+  }
+  
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+  }
+  
+  /* Service Cards */
+  .service-card {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Platform Icons */
+  .platform-icons i {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    margin-bottom: 0.5rem;
+  }
+  
+  .platform-icon {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .platform-icon i {
+    font-size: 2rem;
+    color: #0d6efd;
+  }
+  
+  .platform-icon:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-5px);
+  }
+  
+  .platform-icon-sm i {
+    font-size: 1.5rem;
+  }
+  
+  /* Testimonial Cards */
+  .testimonial-card {
+    border-radius: 1rem;
+  }
+  
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: #e9ecef;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    min-height: 50px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .timeline-content {
+    position: relative;
+    width: 45%;
+  }
+  
+  .timeline-content.left {
+    margin-left: 0;
+    margin-right: 55%;
+  }
+  
+  .timeline-content.right {
+    margin-left: 55%;
+  }
+  
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Progress Timeline */
+  .progress-timeline {
+    position: relative;
+    padding-left: 50px;
+  }
+  
+  .progress-timeline:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 0;
+    left: 18px;
+    width: 2px;
+    background-color: #e9ecef;
+    height: calc(100% - 15px);
+  }
+  
+  .progress-item {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  
+  .timeline-point {
+    position: absolute;
+    left: -50px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Ribbon */
+  .ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .ribbon-top-right {
+    top: -10px;
+    right: -10px;
+  }
+  
+  .ribbon-top-right::before,
+  .ribbon-top-right::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+  
+  .ribbon-top-right::before {
+    top: 0;
+    left: 0;
+  }
+  
+  .ribbon-top-right::after {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .ribbon-top-right span {
+    position: absolute;
+    top: 30px;
+    right: -25px;
+    transform: rotate(45deg);
+    width: 200px;
+    background-color: #ffc107;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #343a40;
+    font-weight: bold;
+  }
+  
+  /* Animation Classes */
+  .animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .animate__fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  .animate__delay-1s {
+    animation-delay: 0.5s;
+  }
+  
+  .animate__delay-2s {
+    animation-delay: 1s;
+  }
+  
+  .animate__pulse {
+    animation-name: pulse;
+  }
+  
+  .animate__infinite {
+    animation-iteration-count: infinite;
+  }
+  
+  .animate__slower {
+    animation-duration: 3s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes pulse {
+    from { transform: scale3d(1, 1, 1); }
+    50% { transform: scale3d(1.05, 1.05, 1.05); }
+    to { transform: scale3d(1, 1, 1); }
+  }
+  
+  /* Responsive fixes */
+  @media (max-width: 767.98px) {
+    .timeline:before {
+      left: 18px;
+    }
+    
+    .timeline-dot {
+      left: 18px;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 40px);
+      margin-left: 40px !important;
+      margin-right: 0 !important;
+    }
+  }

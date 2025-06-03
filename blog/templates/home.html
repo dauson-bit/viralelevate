@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block title %}Home{% endblock%}
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock%}
+
+{% block content %} 
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Moriana Plumbing Services</h1>
+            <p class="tagline">Professional plumbing solutions for your home and business</p>
+            <div class="cta-button">
+                <a href="{% url 'request_service' %}" class="service-btn">Request Service</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-section">
+        <h2>Our Professional Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Emergency Repairs</h3>
+                <p>24/7 emergency plumbing services for unexpected issues</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Installation</h3>
+                <p>Expert installation of fixtures, pipes, and plumbing systems</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛁</div>
+                <h3>Bathroom Remodeling</h3>
+                <p>Complete bathroom renovation and fixture upgrades</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="placeholder"><img src="{%static 'blog/images/image_1.png' %}" alt="image"></div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder"><img src="{%static 'blog/images/image_2.jpg' %}" alt="image"></div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder"><img src="{%static 'blog/images/image_3.jpg' %}" alt="image"></div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder"><img src="{%static 'blog/images/image_4.jpg' %}" alt="image"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="quote">"Excellent service! Fixed our emergency leak quickly and professionally."</div>
+                <div class="customer">- Sarah T.</div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">"The bathroom renovation exceeded our expectations. Highly recommend!"</div>
+                <div class="customer">- Michael R.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to solve your plumbing problems?</h2>
+        <p>Our team of experienced professionals is just a click away</p>
+        <div class="cta-button">
+            <a href="{% url 'request_service' %}" class="service-btn">Request Service Now</a>
+        </div>
+    </div>
+
+    <div class="cta-session">
+        <h2> Your Trusted Plumbing Partner!!! Now with a Shop!</h2>
+        <p> we also have a fully stocked plumbing shop where you can find everything you need, from pipes and fittings to modern bathroom accessories</p>
+        <div class="cta-button">
+            <a href="#" class="service-btn">Shop with us</a>
+        </div>
+    </div>
+{% endblock%}

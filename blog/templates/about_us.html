@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | Moriana Plumbing{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'blog/css/about_us.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>About Moriana Plumbing</h1>
+            <div class="hero-tagline">Excellence in Every Pipe, Quality in Every Connection</div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-content">
+                    <h2>Our Story</h2>
+                    <p class="feature-text">For over two decades, Moriana Plumbing has been the cornerstone of quality plumbing solutions in our community.</p>
+                    <p>Founded in 2000 with a vision to transform the plumbing industry, we began as a small family-owned supply store with a commitment to excellence. Today, we've grown into a trusted name that contractors, builders, and homeowners rely on for premium plumbing supplies and unparalleled expertise.</p>
+                    <p>Our journey has been built on the foundation of trust, quality, and a deep understanding of our customers' needs. Through every pipe, fitting, and fixture we sell, we maintain our promise of delivering products that stand the test of time.</p>
+                </div>
+                <div class="section-image">
+                    <img src="{% static 'blog/images/about-story.jpg' %}" alt="Moriana Plumbing Team" onerror="this.src='https://via.placeholder.com/600x400?text=Our+Story'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-grid reverse">
+                <div class="section-image">
+                    <img src="{% static 'blog/images/about-mission.jpg' %}" alt="Plumbing Supplies" onerror="this.src='https://via.placeholder.com/600x400?text=Our+Mission'">
+                </div>
+                <div class="section-content">
+                    <h2>Our Mission</h2>
+                    <p class="feature-text">To elevate the standard of plumbing through quality products, expert guidance, and exceptional customer service.</p>
+                    <p>We believe that plumbing isn't just about pipes and fittings—it's about creating reliable systems that bring comfort and safety to homes and businesses. Our mission extends beyond selling products; we're committed to educating our customers, supporting our community, and contributing to sustainable water usage practices.</p>
+                    <p>Whether you're a professional plumber tackling complex installations or a homeowner handling DIY repairs, our mission is to equip you with the right tools, materials, and knowledge to succeed in your projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality Without Compromise</h3>
+                    <p>We source only the finest plumbing supplies that meet rigorous standards and stand behind every product we sell.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity in Every Interaction</h3>
+                    <p>Honesty and transparency guide our business practices, from pricing to product recommendations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer-First Approach</h3>
+                    <p>Your satisfaction drives everything we do, and we're dedicated to exceeding your expectations at every turn.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation & Expertise</h3>
+                    <p>We continuously expand our knowledge to bring you the latest advancements in plumbing technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Expert Team</h2>
+            <p class="section-intro">Our knowledgeable staff brings decades of combined experience in the plumbing industry.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="{% static 'blog/images/team-1.jpg' %}" alt="John Moriana" onerror="this.src='https://via.placeholder.com/300x300?text=John+M'">
+                    </div>
+                    <h3>John Moriana</h3>
+                    <p class="member-title">Founder & CEO</p>
+                    <p class="member-bio">With over 30 years of plumbing experience, John established Moriana Plumbing with a vision to provide exceptional quality products.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="{% static 'blog/images/team-2.jpg' %}" alt="Sarah Johnson" onerror="this.src='https://via.placeholder.com/300x300?text=Sarah+J'">
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="member-title">Operations Manager</p>
+                    <p class="member-bio">Sarah ensures our supply chain runs smoothly and customers receive their orders accurately and on time.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="{% static 'blog/images/team-3.jpg' %}" alt="Michael Chen" onerror="this.src='https://via.placeholder.com/300x300?text=Michael+C'">
+                    </div>
+                    <h3>Michael Chen</h3>
+                    <p class="member-title">Technical Specialist</p>
+                    <p class="member-bio">Michael's technical knowledge helps customers find the perfect solutions for even the most complex plumbing challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Moriana Plumbing has been my go-to supplier for over a decade. Their product quality and expert advice have helped my business thrive and maintain our reputation for excellence.</p>
+                        <div class="testimonial-author">
+                            <strong>Robert Williams</strong>
+                            <span>Master Plumber, Williams & Sons Plumbing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>As a contractor handling multiple projects, I need a reliable supplier. Moriana's consistent quality and on-time deliveries have made them an invaluable partner in our success.</p>
+                        <div class="testimonial-author">
+                            <strong>Elena Rodriguez</strong>
+                            <span>Project Manager, BuildRight Construction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>When renovating our bathroom, I was overwhelmed by the choices. The team at Moriana guided me through the selection process with patience and expertise, ensuring I got exactly what I needed.</p>
+                        <div class="testimonial-author">
+                            <strong>James Thompson</strong>
+                            <span>Homeowner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience the Moriana Difference</h2>
+            <p>Whether you're a professional plumber, contractor, or homeowner, we have the products and expertise you need.</p>
+            <div class="cta-buttons">
+                <a href="{% url 'shop_store' %}" class="btn btn-primary">Explore Our Products</a>
+                <a href="{% url 'purchase' %}" class="btn btn-secondary">Place an Order</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

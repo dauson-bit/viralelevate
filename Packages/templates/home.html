@@ -1,0 +1,416 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Viralelevate - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section  -->
+<section>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'images/social-media-icon.jpg' %}" alt="image">
+        <div class="carousel-caption d-block text-dark">
+          <h3>Welcome to Viralelevate</h3>
+          <p>Your one-stop solution for viral marketing and digital growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5 mt-5 " >
+  <div class="container">
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="fw-bold mb-3">Our Premium Services</h2>
+        <p class="lead text-muted">We offer comprehensive digital solutions to elevate your brand's online presence and reach.</p>
+      </div>
+    </div>
+    
+    <!-- Services Cards -->
+    <div class="row g-4">
+      <!-- Social Media Management -->
+      <div >
+        <div class="card bg-success h-100  shadow-sm border-0 hover-shadow">
+          <div class="card-body text-center text-white p-4">
+            <div class="icon-box  bg-opacity-10 text-primary mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center " style="width: 80px; height: 80px;">
+              <i class=" text-white bi bi-graph-up fs-2"></i>
+            </div>
+            <h3 class="card-title h4 mb-3">Social Media Management</h3>
+            <p class="card-text ">We offer strategic planning, content creation, and engagement management for all your social media platforms.</p>
+            <a href="{% url 'one_time_growth' %}" class="btn btn-outline-light mt-3">Place your order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3">Why Choose Viralelevate?</h2>
+        <p class="lead mb-4">We combine creativity, technology, and marketing expertise to deliver exceptional results.</p>
+        
+        <div class="d-flex mb-3">
+          <div class="me-3 text-primary">
+            <i class="bi bi-check-circle-fill fs-4"></i>
+          </div>
+          <div>
+            <h4 class="h5">Expert Team</h4>
+            <p class="text-muted">Our professionals have years of experience in digital marketing and development.</p>
+          </div>
+        </div>
+        
+        <div class="d-flex mb-3">
+          <div class="me-3 text-primary">
+            <i class="bi bi-check-circle-fill fs-4"></i>
+          </div>
+          <div>
+            <h4 class="h5">Custom Solutions</h4>
+            <p class="text-muted">We create tailored strategies designed specifically for your business needs.</p>
+          </div>
+        </div>
+        
+        <div class="d-flex">
+          <div class="me-3 text-primary">
+            <i class="bi bi-check-circle-fill fs-4"></i>
+          </div>
+          <div>
+            <h4 class="h5">Proven Results</h4>
+            <p class="text-muted">Our track record shows consistent growth and success for our clients.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+          <img src="{% static 'images/boost.webp' %}" alt="Why Choose Us" class="img-fluid" >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8 mx-auto text-center">
+        <h2 class="fw-bold mb-3">What Our Clients Say</h2>
+        <p class="lead text-muted">Don't just take our word for it - hear from some of our satisfied clients.</p>
+      </div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <div class="mb-3 text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text mb-4">"Viralelevate transformed our online presence completely. Their strategic approach to social media management increased our engagement by 100%."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                <span class="fw-bold"><img src="{% static 'images/dauson.jpg' %}" 
+                  class="rounded-circle img-thumbnail" 
+                  style="width: 40px; height: 40px; object-fit: cover;" 
+                  alt="Profile"></span>
+              </div>
+              <div>
+                <h5 class="mb-0 fw-bold">Dauson kazungu</h5>
+                <p class="text-muted mb-0">Marketing Director, TechCorp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <div class="mb-3 text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text mb-4">"The mobile app they developed for our business has received outstanding feedback from our customers. The UI/UX design is exceptional."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                <span class="fw-bold"><img src="{% static 'images/vanessa.jpg' %}" 
+                  class="rounded-circle img-thumbnail" 
+                  style="width: 40px; height: 40px; object-fit: cover;" 
+                  alt="Profile"></span>
+              </div>
+              <div>
+                <h5 class="mb-0 fw-bold">Vanessa Mtui</h5>
+                <p class="text-muted mb-0">CEO, Retail Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <div class="mb-3 text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text mb-4">"Their graphic design team created branding material that perfectly captured our company's vision. We've seen an increase in brand recognition."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                <img src="{% static 'images/dauson.jpg' %}" 
+                  class="rounded-circle img-thumbnail" 
+                  style="width: 40px; height: 40px; object-fit: cover;" 
+                  alt="Profile">
+              </div>
+              <div>
+                <h5 class="mb-0 fw-bold">Anderson Manento</h5>
+                <p class="text-muted mb-0">Brand Manager, Creative Co.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class=" container bg-secondary text-white py-5 ">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3">Ready to Take Your Brand to the Next Level?</h2>
+    <p class="lead mb-4">Join our growing list of satisfied clients and experience the Viralelevate difference.</p>
+    <div class="d-flex justify-content-center">
+      <a  href="{% url 'one_time_growth' %}"  class="btn btn-light btn-lg me-3">Get Started</a>
+      <a href="#" class="btn btn-outline-light btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="container my-5">
+  <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+    
+    {% comment %} FAQ 1 {% endcomment %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+          What services does Viralelevate offer?
+        </button>
+      </h2>
+      <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We offer social media boosting, graphic design, and software development — available individually or in packages.
+        </div>
+      </div>
+    </div>
+
+    {% comment %} FAQ 2 {% endcomment %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+          How does the social media boosting work?
+        </button>
+      </h2>
+      <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We use targeted strategies and verified engagement (no bots) to grow your account organically.
+        </div>
+      </div>
+    </div>
+
+    {% comment %} FAQ 3 {% endcomment %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+          Is it safe to share my social media credentials?
+        </button>
+      </h2>
+      <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes. We use encrypted storage and never share your information. Often, we don't even need login access.
+        </div>
+      </div>
+    </div>
+
+    {% comment %} FAQ 4–11 — Repeating Format {% endcomment %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+          How long does it take to see results?
+        </button>
+      </h2>
+      <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Results typically appear within 48–72 hours. We recommend 7 days for full performance.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq5">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+          What platforms do you support?
+        </button>
+      </h2>
+      <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Instagram, TikTok, Facebook, Twitter (X), LinkedIn. More are coming soon.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq6">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+          Can I request custom design work?
+        </button>
+      </h2>
+      <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes! We offer logos, brand kits, flyers, social media templates and more — fully customized for you.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq7">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+          What if I'm not satisfied with a design?
+        </button>
+      </h2>
+      <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We offer up to 3 free revisions on every design order to ensure you're completely satisfied.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq8">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+          Do you build mobile apps or just websites?
+        </button>
+      </h2>
+      <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We develop both! Web platforms, mobile apps (Android/iOS), and full custom dashboards.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq9">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+          How do I place an order?
+        </button>
+      </h2>
+      <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Go to the Get Started page, choose a service, fill the form — and we'll get in touch within 24 hours.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq10">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+          Can I track my order status?
+        </button>
+      </h2>
+      <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes. You'll get a tracking ID and can view real-time updates in your client dashboard.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq11">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">
+          Do I pay first or after the service?
+        </button>
+      </h2>
+      <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          You will pay half of the cost before service work and another half will be payed on the middle of the service work
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq12">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12">
+          How do I contact support?
+        </button>
+      </h2>
+      <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Email us at <b>support@viralelevate.com</b>, message us on WhatsApp, or use our live website chat.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Us Modal -->
+<div class="modal fade" id="contactUsModal" tabindex="-1" aria-labelledby="contactUsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="contactUsModalLabel">Contact Us</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          <a href="tel:+2557554828" class="btn btn-outline-primary mb-3 w-100" style="font-size:1.2rem;">
+            <i class="bi bi-telephone me-2"></i>+255 755 548 2835
+          </a>
+        </p>
+        <p>
+          <a href="tel:+255622330425" class="btn btn-outline-primary mb-3 w-100" style="font-size:1.2rem;">
+            <i class="bi bi-telephone me-2"></i>+255 622 330 425
+          </a>
+        </p>
+        <p>
+          <a href="mailto:mr.kuza2003@gmail.com" class="btn btn-outline-success w-100" style="font-size:1.2rem;">
+            <i class="bi bi-envelope me-2"></i>mr.kuza2003@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update all Contact Us links/buttons to open the modal -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a, button').forEach(function(el) {
+    if (el.textContent.trim().toLowerCase() === 'contact us') {
+      el.setAttribute('data-bs-toggle', 'modal');
+      el.setAttribute('data-bs-target', '#contactUsModal');
+      el.setAttribute('href', '#');
+    }
+  });
+});
+</script>
+
+{% endblock %}

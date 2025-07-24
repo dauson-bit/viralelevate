@@ -1,0 +1,123 @@
+/* Base Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+  padding-top: 76px;
+}
+
+footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 1rem 0;
+}
+
+/* Navbar */
+.navbar {
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+/* Hero Social Icon */
+.hero-social-icon {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+
+/* Hero Banner */
+.hero-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px rgba(99,102,241,0.10);
+  padding: 2rem 1rem 1.5rem 1rem;
+  margin: 0 auto 2rem auto;
+  max-width: 420px;
+}
+.hero-banner-icon {
+  max-width: 110px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  background: #fff;
+}
+.hero-banner-text {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #3b2f7f;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  background: rgba(255,255,255,0.85);
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 0.5rem 0;
+}
+@media (max-width: 576px) {
+  .hero-banner {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 95vw;
+  }
+  .hero-banner-text {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  }
+  .hero-banner-icon {
+    max-width: 80px;
+  }
+}
+
+/* Footer Links */
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff !important;
+}
+
+/* Social Icons */
+footer .bi {
+  transition: transform 0.3s ease;
+}
+
+footer .bi:hover {
+  transform: translateY(-3px);
+}

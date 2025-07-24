@@ -1,0 +1,240 @@
+/* Luxury Container Styles */
+.luxury-container {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Form Input Styles */
+.luxury-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.luxury-input:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+}
+
+.luxury-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Labels */
+.form-label {
+    color: #ffffff !important;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Price Display */
+.price-display {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.price-amount {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Submit Button */
+.luxury-button {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.luxury-button:hover {
+    background: linear-gradient(135deg, #357abd, #2a5f94);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.luxury-button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Card Styles */
+.premium-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.premium-header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    padding: 1rem;
+}
+
+/* Description Card */
+.description-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Service Description Section */
+.collapse-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.collapse-section h6 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collapse-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Toggle Service Description Button */
+#toggleServiceDesc {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(53, 122, 189, 0.1));
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    color: #4a90e2;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+#toggleServiceDesc:hover {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.15), rgba(53, 122, 189, 0.15));
+    border-color: rgba(74, 144, 226, 0.3);
+    transform: translateY(-1px);
+}
+
+#toggleServiceDesc i {
+    transition: transform 0.3s ease;
+}
+
+#toggleServiceDesc[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+/* Description Card Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.collapse-section:not(.d-none) {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Description Text Highlight */
+.collapse-section p {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.collapse-section p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #4a90e2, #357abd);
+    border-radius: 3px;
+}
+
+/* Description Card Hover Effect */
+.collapse-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Alert Section */
+.luxury-alert {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 16px;
+}
+
+.premium-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.premium-list li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.premium-list li:before {
+    content: "•";
+    color: #f59e0b;
+    position: absolute;
+    left: 0;
+}
+
+/* Status Badges */
+.status-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff, #a0aec0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+} 

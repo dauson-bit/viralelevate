@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Payment Guide{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/one_time_growth.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="luxury-container">
+    <div class="floating-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+    
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="premium-card">
+                    <div class="premium-header text-white">
+                        <h5 class="mb-0 fw-bold d-flex align-items-center">
+                            <i class="fas fa-credit-card me-2"></i>
+                            Complete Your Payment
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- Order Summary -->
+                        <div class="order-summary mb-4">
+                            <h6 class="fw-bold text-white mb-3">Order Summary</h6>
+                            <div class="description-card p-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-white-50">Service:</span>
+                                    <span class="text-white">{{ order.service.name }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-white-50">Quantity:</span>
+                                    <span class="text-white">{{ order.quantity }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-white-50">Phone:</span>
+                                    <span class="text-white">{{ order.customer_phone }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-white-50">Total Amount:</span>
+                                    <span class="text-white fw-bold">${{ order.total_price }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Instructions -->
+                        <div class="payment-instructions">
+                            <h6 class="fw-bold text-white mb-3">Payment Instructions</h6>
+                            <div class="description-card p-3">
+                                <ol class="premium-list mb-0">
+                                    <li>Click the "Pay Now" button below to proceed to payment</li>
+                                    <li>You will be redirected to our secure payment gateway</li>
+                                    <li>Complete the payment using your preferred method</li>
+                                    <li>After successful payment, you'll receive a confirmation email</li>
+                                    <li>Our team will begin processing your order immediately</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Payment Button -->
+                        <div class="text-center mt-4 bg-success">
+                            <a href="{% url 'payment_gateway' order.id %}" onclick={} class="luxury-button btn btn-small">
+                                <i class="fas fa-lock me-2"></i>
+                                PAY NOW
+                            </a>
+                        </div>
+
+                        <!-- Security Notice -->
+                        <div class="text-center mt-4">
+                            <p class="text-white-50 mb-0">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Your payment information is encrypted and secure
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

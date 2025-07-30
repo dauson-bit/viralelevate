@@ -84,9 +84,16 @@ def submit_order(request):
 def payment_guide(request, order_id):
     try:
         order = get_object_or_404(Order, id=order_id)
-        # Generate payment URL (you'll need to implement this based on your payment gateway)
-        payment_url = f"/payment/{order.id}/"  # This should be replaced with your actual payment gateway URL
-        
+        # Generate transaction ID if it doesn't exist
+        if not order.transaction_id:
+            if not order.customer_phone or len(order.customer_phone) < 4:
+                messages.error(request, 'Invalid customer phone number.')
+                return redirect('home')
+            import uuid
+            transaction_id = f"TX-{uuid.uuid4().hex[:10].upper()}-{order.customer_phone[-4:]}"
+            order.transaction_id = transaction_id
+            order.save()
+        payment_url = f"/payment/{order.id}/"  # This can be removed if not needed
         return render(request, 'payment_guide.html', {
             'order': order,
             'payment_url': payment_url
@@ -99,25 +106,25 @@ def payment_gateway(request, order_id):
     # Step 1: Fetch the order or 404
     order = get_object_or_404(Order, id=order_id)
 
-    # Step 2: On POST, generate and save transaction ID
-    if request.method == 'POST':
+    # Step 2: Generate transaction ID if it doesn't exist (for both GET and POST)
+    if not order.transaction_id:
         # Ensure customer_phone is present
         if not order.customer_phone or len(order.customer_phone) < 4:
             messages.error(request, 'Invalid customer phone number.')
             return redirect('home')
 
-        # Generate unique transaction ID
+        # Generate transaction ID
         transaction_id = f"TX-{uuid.uuid4().hex[:10].upper()}-{order.customer_phone[-4:]}"
-        
-        # Save transaction ID to the order
         order.transaction_id = transaction_id
         order.save()
-
-        # Optional: Add a success message
-        messages.success(request, 'Transaction ID generated successfully!')
+        
+        if request.method == 'POST':
+            messages.success(request, 'Transaction ID generated successfully!')
+    elif request.method == 'POST':
+        messages.info(request, 'Transaction ID already exists for this order.')
 
     # Step 3: Render the payment page
     return render(request, 'payment_gateway.html', {
         'order': order,
-        'transaction_id': order.transaction_id  # May be None on GET
+        'transaction_id': order.transaction_id
     })

@@ -6,6 +6,203 @@
 <link rel="stylesheet" href="{% static 'css/one_time_growth.css' %}">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Custom Modal Styling */
+.custom-modal .modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+}
+
+.custom-modal .modal-header {
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+}
+
+.custom-modal .modal-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.custom-modal .modal-body {
+    padding: 2rem;
+}
+
+.custom-modal .modal-footer {
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 15px 15px;
+    padding: 1rem 1.5rem;
+}
+
+.payment-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.payment-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.payment-label {
+    font-size: 0.875rem;
+    color: #a8b2d1;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.payment-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4ade80;
+    word-break: break-all;
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    color: white;
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.instruction-box {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.instruction-box .alert-info {
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Toast Styling */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.custom-toast {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+    margin-bottom: 10px;
+    min-width: 300px;
+}
+
+.custom-toast .toast-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1rem;
+}
+
+.custom-toast .toast-body {
+    padding: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-modal .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    
+    .custom-modal .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .payment-item {
+        padding: 0.75rem;
+    }
+    
+    .payment-value {
+        font-size: 1rem;
+    }
+    
+    .copy-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 70px;
+    }
+    
+    .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .custom-toast {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-modal .modal-header {
+        padding: 1rem;
+    }
+    
+    .custom-modal .modal-body {
+        padding: 1rem;
+    }
+    
+    .payment-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .copy-btn {
+        margin-top: 0.5rem;
+        align-self: flex-end;
+    }
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -45,7 +242,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="text-white-50">Total Amount:</span>
-                                    <span class="text-white fw-bold">${{ order.total_price }}</span>
+                                    <span class="text-white fw-bold">Tsh {{ order.total_price }}</span>
                                 </div>
                             </div>
                         </div>
@@ -55,21 +252,33 @@
                             <h6 class="fw-bold text-white mb-3">Payment Instructions</h6>
                             <div class="description-card p-3">
                                 <ol class="premium-list mb-0">
-                                    <li>Click the "Pay Now" button below to proceed to payment</li>
-                                    <li>You will be redirected to our secure payment gateway</li>
-                                    <li>Complete the payment using your preferred method</li>
-                                    <li>After successful payment, you'll receive a confirmation email</li>
-                                    <li>Our team will begin processing your order immediately</li>
+                                    <li>Click the "Pay Now" button below to view payment details</li>
+                                    <li>Copy the payment number and transaction ID</li>
+                                    <li>Make payment using your preferred payment app</li>
+                                    <li>Include the transaction ID when contacting us</li>
+                                    <li>Our team will process your order after payment confirmation</li>
                                 </ol>
                             </div>
                         </div>
 
                         <!-- Payment Button -->
-                        <div class="text-center mt-4 bg-success">
-                            <a href="{% url 'payment_gateway' order.id %}" onclick={} class="luxury-button btn btn-small">
-                                <i class="fas fa-lock me-2"></i>
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-lg px-5 py-3 fw-bold text-white" 
+                                    style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+                                           border: none; 
+                                           border-radius: 15px; 
+                                           box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+                                           font-size: 1.2rem;
+                                           text-transform: uppercase;
+                                           letter-spacing: 1px;
+                                           transition: all 0.3s ease;" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#paymentModal"
+                                    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(16, 185, 129, 0.6)'"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(16, 185, 129, 0.4)'">
+                                <i class="fas fa-lock me-3"></i>
                                 PAY NOW
-                            </a>
+                            </button>
                         </div>
 
                         <!-- Security Notice -->
@@ -85,4 +294,201 @@
         </div>
     </div>
 </div>
+
+<!-- Bootstrap Modal for Payment Details -->
+<div class="modal fade custom-modal" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">
+                    <i class="fas fa-credit-card me-2"></i>
+                    Payment Details
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-item d-flex align-items-center justify-content-between" data-field="payNumber">
+                    <div class="flex-grow-1">
+                        <div class="payment-label">Pay To Number</div>
+                        <div id="payNumber" class="payment-value">0755482835</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('payNumber', 'Payment number copied!')">
+                        <i class="fas fa-copy me-1"></i>Copy
+                    </button>
+                </div>
+                
+                <div class="payment-item d-flex align-items-center justify-content-between" data-field="accountName">
+                    <div class="flex-grow-1">
+                        <div class="payment-label">Account Name</div>
+                        <div id="accountName" class="payment-value">DAUSON KAZUNGU ANTONY</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('accountName', 'Account name copied!')">
+                        <i class="fas fa-copy me-1"></i>Copy
+                    </button>
+                </div>
+                
+                <div class="payment-item d-flex align-items-center justify-content-between" data-field="transactionId">
+                    <div class="flex-grow-1">
+                        <div class="payment-label">Transaction ID</div>
+                        <div id="transactionId" class="payment-value">{{ order.transaction_id }}</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('transactionId', 'Transaction ID copied!')">
+                        <i class="fas fa-copy me-1"></i>Copy
+                    </button>
+                </div>
+                
+                <div class="instruction-box">
+                    <div class="alert alert-info" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Important:</strong> Please copy the Transaction ID and include it when texting us after payment. Use the payment number above to make your payment in your preferred payment app.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-1"></i>Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container"></div>
+
+<script>
+function copyToClipboard(elementId, message) {
+    // Try multiple methods to get the text
+    let text = '';
+    const element = document.getElementById(elementId);
+    
+    if (element) {
+        // Try different ways to get the text content
+        text = element.innerText || element.textContent || element.innerHTML.replace(/<[^>]*>/g, '');
+    }
+    
+    // Fallback: if element not found, try to get text from the payment item container
+    if (!text) {
+        const paymentItem = document.querySelector(`[data-field="${elementId}"]`);
+        if (paymentItem) {
+            const valueElement = paymentItem.querySelector('.payment-value');
+            if (valueElement) {
+                text = valueElement.innerText || valueElement.textContent;
+            }
+        }
+    }
+    
+    if (!text) {
+        showToast('Could not find text to copy', 'error');
+        return;
+    }
+    
+    // Try modern clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            showToast(message, 'success');
+        }).catch(function(err) {
+            // Fallback to older method
+            fallbackCopyTextToClipboard(text, message);
+        });
+    } else {
+        // Use fallback method for older browsers or non-secure contexts
+        fallbackCopyTextToClipboard(text, message);
+    }
+}
+
+function fallbackCopyTextToClipboard(text, message) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showToast(message, 'success');
+        } else {
+            showToast('Failed to copy text', 'error');
+        }
+    } catch (err) {
+        showToast('Failed to copy text', 'error');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showToast(message, type = 'success') {
+    const toastContainer = document.querySelector('.toast-container');
+    const toastId = 'toast-' + Date.now();
+    
+    const toast = document.createElement('div');
+    toast.className = `toast custom-toast ${type === 'error' ? 'bg-danger' : ''}`;
+    toast.id = toastId;
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.setAttribute('aria-atomic', 'true');
+    
+    toast.innerHTML = `
+        <div class="toast-header">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2"></i>
+            <strong class="me-auto">${type === 'success' ? 'Success' : 'Error'}</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            ${message}
+        </div>
+    `;
+    
+    toastContainer.appendChild(toast);
+    
+    const bsToast = new bootstrap.Toast(toast, {
+        autohide: true,
+        delay: 3000
+    });
+    
+    bsToast.show();
+    
+    // Remove toast element after it's hidden
+    toast.addEventListener('hidden.bs.toast', function() {
+        toast.remove();
+    });
+}
+
+// Initialize tooltips if Bootstrap is available
+document.addEventListener('DOMContentLoaded', function() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
+    // Add touch event listeners for mobile devices
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    copyButtons.forEach(function(button) {
+        // Add touch event listener for mobile
+        button.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            // Add a small delay to ensure the click event is properly handled
+            setTimeout(() => {
+                const onclick = this.getAttribute('onclick');
+                if (onclick) {
+                    eval(onclick);
+                }
+            }, 100);
+        });
+        
+        // Ensure click events work properly on mobile
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const onclick = this.getAttribute('onclick');
+            if (onclick) {
+                eval(onclick);
+            }
+        });
+    });
+});
+</script>
 {% endblock %} 
